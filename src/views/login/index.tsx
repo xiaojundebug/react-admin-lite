@@ -16,7 +16,7 @@ const Login: React.FC<ILoginProps> = props => {
   const { loading, openLoading, closeLoading } = useContext(stores.uiStore)
   const { getFieldDecorator, validateFields } = props.form
   // 处理提交
-  const handleSubmit = (ev: React.FormEvent) => {
+  const handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault()
     validateFields((err: any, values: any) => {
       if (!err) login(values)
@@ -27,7 +27,6 @@ const Login: React.FC<ILoginProps> = props => {
     let { account, password } = values
 
     openLoading()
-
     axios
       .post('auth/login', {
         account,
