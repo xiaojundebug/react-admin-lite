@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { Redirect, RouteComponentProps } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
-import { FormComponentProps } from 'antd/es/form'
+import { FormComponentProps } from 'antd/lib/form'
 import * as stores from '../../store'
 import axios from '../../plugins/axios'
 

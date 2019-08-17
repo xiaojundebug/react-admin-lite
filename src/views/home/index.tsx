@@ -2,7 +2,7 @@ import './style.less'
 import React, { useContext } from 'react'
 import { Route, Redirect, RouteComponentProps } from 'react-router-dom'
 import { Layout, Menu, Dropdown, Icon, Avatar, Modal, Input, BackTop, Button } from 'antd'
-import { ClickParam } from 'antd/es/menu'
+import { ClickParam } from 'antd/lib/menu'
 import { observer, useLocalStore } from 'mobx-react-lite'
 import * as stores from '../../store'
 

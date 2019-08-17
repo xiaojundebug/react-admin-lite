@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Button, DatePicker, Timeline, Divider, Icon, Tooltip } from 'antd'
-import { FormComponentProps } from 'antd/es/form'
+import { FormComponentProps } from 'antd/lib/form'
 import { observer } from 'mobx-react-lite'
 
 const FormItem = Form.Item
