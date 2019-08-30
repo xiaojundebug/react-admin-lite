@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import './mock'
-import Home from './views/home'
-import Login from './views/login'
+import Home from './pages/Home'
+import Login from './pages/Login'
 
 const App: React.FC = props => {
   return (

@@ -9,9 +9,9 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: {
-      '@primary-color': '#35b784',
-      '@border-radius-base': '0',
-      '@border-radius-sm': '0'
+      '@primary-color': '#8994DF',
+      // '@border-radius-base': '0',
+      // '@border-radius-sm': '0'
     }
   }),
   addDecoratorsLegacy()
