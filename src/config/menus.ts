@@ -3,8 +3,8 @@ import { lazy } from 'react'
 interface Menu {
   name: string
   key: string
-  icon: string
-  component: React.ReactNode
+  icon?: string
+  component?: React.ReactNode
   children?: Menu[]
 }
 
@@ -32,6 +32,23 @@ const menus: Menu[] = [
     key: '/reports',
     icon: 'upload',
     component: lazy(() => import('../pages/Home/Reports'))
+  },
+  {
+    name: '一级菜单',
+    key: '/level1',
+    children: [
+      {
+        name: '二级菜单',
+        key: '/level2',
+        children: [
+          {
+            name: '三级菜单',
+            key: '/level3',
+            component: lazy(() => import('../pages/MultiLevelNav'))
+          }
+        ]
+      }
+    ]
   }
 ]
 

@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { Layout, Spin } from 'antd'
 import { Switch } from 'react-router-dom'
-import AuthRoute from "../AuthRoute";
+import AuthRoute from '../AuthRoute'
 import menus from '../../config/menus'
 import NoMatch from '../../pages/Home/404'
 
@@ -12,11 +12,9 @@ function hasChild(menu: any) {
 function genRoutes(menus: any) {
   return menus.reduce((prev: any, next: any) => {
     return prev.concat(
-      hasChild(next) ? (
-        genRoutes(next.children)
-      ) : (
-        <AuthRoute path={next.key} component={next.component} key={next.key} />
-      )
+      hasChild(next)
+        ? genRoutes(next.children)
+        : next.component && <AuthRoute path={next.key} component={next.component} key={next.key} />
     )
   }, [])
 }

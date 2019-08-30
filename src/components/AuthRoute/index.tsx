@@ -7,6 +7,7 @@ type PickRequired<T, K extends keyof T> = T & Required<Pick<T, K>>
 const AuthRoute: React.FC<PickRequired<RouteProps, 'component'>> = props => {
   const { isLogged } = useContext(stores.userStore)
   const { component: Component, ...rest } = props
+  
   return (
     <Route
       {...rest}

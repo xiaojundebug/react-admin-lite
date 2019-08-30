@@ -4,34 +4,39 @@ import { ClickParam } from 'antd/lib/menu'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import menus from '../../config/menus'
 
+function hasChild(menu: any) {
+  return Array.isArray(menu.children) && menu.children.length > 0
+}
+
+function genMenItem(menu: any) {
+  return (
+    <Menu.Item key={menu.key}>
+      {menu.icon && <Icon type={menu.icon} />}
+      <span>{menu.name}</span>
+    </Menu.Item>
+  )
+}
+
+function genMenus(menus: any) {
+  return menus.reduce((prev: any, next: any) => {
+    return prev.concat(
+      hasChild(next) ? (
+        <Menu.SubMenu title={next.name} key={next.key}>
+          {genMenus(next.children)}
+        </Menu.SubMenu>
+      ) : (
+        genMenItem(next)
+      )
+    )
+  }, [])
+}
+
 const Menus: React.FC<RouteComponentProps> = props => {
   const { location, history } = props
 
   // 处理导航菜单click事件
   function handleNavClick({ key }: ClickParam) {
     history.push(key)
-  }
-  // 只考虑最多两层
-  function genSubMenu(menu: any) {
-    return (
-      <Menu.SubMenu title={menu.name} key={menu.key}>
-        {menu.children.map((el: any) => (
-          <Menu.Item key={el.key}>
-            <Icon type={el.icon} />
-            <span>{el.name}</span>
-          </Menu.Item>
-        ))}
-      </Menu.SubMenu>
-    )
-  }
-
-  function genMenItem(menu: any) {
-    return (
-      <Menu.Item key={menu.key}>
-        <Icon type={menu.icon} />
-        <span>{menu.name}</span>
-      </Menu.Item>
-    )
   }
 
   return (
@@ -41,11 +46,7 @@ const Menus: React.FC<RouteComponentProps> = props => {
       defaultSelectedKeys={[location.pathname]}
       onClick={handleNavClick}
     >
-      {menus.map(menu =>
-        Array.isArray(menu.children) && menu.children.length > 0
-          ? genSubMenu(menu)
-          : genMenItem(menu)
-      )}
+      {genMenus(menus)}
     </Menu>
   )
 }
