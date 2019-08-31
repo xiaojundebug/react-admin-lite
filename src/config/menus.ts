@@ -1,54 +1,59 @@
 import { lazy } from 'react'
 
-interface Menu {
-  name: string
-  key: string
-  icon?: string
-  component?: React.ReactNode
-  children?: Menu[]
-}
-
-const menus: Menu[] = [
+const menus: IMenu[] = [
   {
     name: '合作商户',
     key: '/information',
     icon: 'user',
-    component: lazy(() => import('../pages/Home/Information'))
+    component: lazy(() => import('../pages/Information')),
+    permissions: ['admin']
   },
   {
     name: '订单查询',
     key: '/order-query',
     icon: 'file-text',
-    component: lazy(() => import('../pages/Home/OrderQuery'))
+    component: lazy(() => import('../pages/OrderQuery')),
+    permissions: ['admin']
   },
   {
     name: '交易查询',
     key: '/trade-query',
     icon: 'pay-circle',
-    component: lazy(() => import('../pages/Home/TradeQuery'))
+    component: lazy(() => import('../pages/TradeQuery')),
+    permissions: ['admin']
   },
   {
     name: '报表导出',
     key: '/reports',
     icon: 'upload',
-    component: lazy(() => import('../pages/Home/Reports'))
+    component: lazy(() => import('../pages/Reports')),
+    permissions: ['admin']
   },
   {
     name: '一级菜单',
     key: '/level1',
+    icon: 'man',
     children: [
       {
         name: '二级菜单',
         key: '/level2',
+        icon: 'woman',
         children: [
           {
             name: '三级菜单',
             key: '/level3',
-            component: lazy(() => import('../pages/MultiLevelNav'))
+            icon: 'api',
+            component: lazy(() => import('../pages/Hello'))
           }
         ]
       }
     ]
+  },
+  {
+    name: '权限测试',
+    key: '/permission',
+    icon: 'medicine-box',
+    component: lazy(() => import('../pages/Permission'))
   }
 ]
 

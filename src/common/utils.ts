@@ -15,10 +15,10 @@ function mobxPersist<T, K extends keyof T>(store: T, fields: K[]): T {
   autorun(() => {
     fields.forEach(field => {
       if (is_first_run) {
-        const data = localStorage.getItem(field as string)
+        const data = window.sessionStorage.getItem(field as string)
         data && (store[field] = JSON.parse(data))
       }
-      localStorage.setItem(field as string, JSON.stringify(store[field]))
+      window.sessionStorage.setItem(field as string, JSON.stringify(store[field]))
     })
     is_first_run = false
   })

@@ -46,7 +46,7 @@ const Login: React.FC<ILoginProps> = props => {
   }
   // 已经登录则重定向到首页
   if (isLogged) {
-    return <Redirect to="/information" />
+    return <Redirect to="/" />
   }
 
   return (
