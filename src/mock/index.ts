@@ -49,10 +49,6 @@ Mock.mock(/getMerchantInfo/, {
   }
 })
 
-Mock.mock(/order-query/, {
-  t: {}
-})
-
 Mock.mock(/trade-query/, {
   't|10': [
     {

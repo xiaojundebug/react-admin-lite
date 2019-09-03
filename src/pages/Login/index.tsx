@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite'
 import { Row, Col, Form, Icon, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form'
 import * as stores from '../../store'
-import axios from '../../plugins/axios'
+import axios from '../../common/axios'
 
 const FormItem = Form.Item
 
@@ -46,7 +46,7 @@ const Login: React.FC<ILoginProps> = props => {
   }
   // 已经登录则重定向到首页
   if (isLogged) {
-    return <Redirect to="/" />
+    return <Redirect to="/permission" />
   }
 
   return (

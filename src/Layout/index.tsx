@@ -42,7 +42,9 @@ const Home: React.FC<RouteComponentProps> = props => {
 
   return (
     <Layout className="home">
+      {/* 侧边导航 */}
       <Sider trigger={null} collapsible collapsed={state.collapsed}>
+        {/* logo */}
         <div className="logo" />
         <Menus />
       </Sider>
@@ -54,8 +56,9 @@ const Home: React.FC<RouteComponentProps> = props => {
             onClick={toggle}
           />
           <div className="right-block">
+            {/* 头像 */}
             <Avatar
-              style={{ backgroundColor: '#25b685', marginRight: '10px' }}
+              style={{ marginRight: '10px' }}
               src="https://avatars0.githubusercontent.com/u/24448924?s=460&v=4"
             />
             <Dropdown
@@ -77,6 +80,7 @@ const Home: React.FC<RouteComponentProps> = props => {
             </Dropdown>
           </div>
         </Header>
+        {/* 主内容 */}
         <Content />
       </Layout>
       <Modal

@@ -4,7 +4,7 @@ import { FormComponentProps } from 'antd/lib/form'
 import { ColumnProps } from 'antd/lib/table'
 import { observer, useLocalStore } from 'mobx-react-lite'
 import * as stores from '../../store'
-import axios from '../../plugins/axios'
+import axios from '../../common/axios'
 import { ORDER_STATUS_MAP } from '../../common/const'
 
 const FormItem = Form.Item

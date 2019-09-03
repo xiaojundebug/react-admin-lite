@@ -12,15 +12,13 @@ function usePermission() {
 
   return hasPermission
 }
-// 处理按钮级别权限，类似高阶组件
-function useAuthComponent(
-  BaseComponent: React.ComponentType<any>,
-  permissions: Permission[]
-): React.FC<any> {
+// 处理元素级别权限，类似高阶组件
+function useAuthComponent(...permissions: Permission[]) {
   const { userinfo } = useContext(userStore)
   const hasPermission = permissions.includes(userinfo.permission)
 
-  return props => (hasPermission ? <BaseComponent {...props} /> : null)
+  return <P extends {}>(...BaseComponents: React.ComponentType<P>[]): React.FC<P>[] =>
+    BaseComponents.map(Component => props => (hasPermission ? <Component {...props} /> : null))
 }
 
 export { usePermission, useAuthComponent }

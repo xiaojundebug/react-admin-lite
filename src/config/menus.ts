@@ -9,24 +9,10 @@ const menus: IMenu[] = [
     permissions: ['admin']
   },
   {
-    name: '订单查询',
-    key: '/order-query',
-    icon: 'file-text',
-    component: lazy(() => import('../pages/OrderQuery')),
-    permissions: ['admin']
-  },
-  {
     name: '交易查询',
     key: '/trade-query',
     icon: 'pay-circle',
     component: lazy(() => import('../pages/TradeQuery')),
-    permissions: ['admin']
-  },
-  {
-    name: '报表导出',
-    key: '/reports',
-    icon: 'upload',
-    component: lazy(() => import('../pages/Reports')),
     permissions: ['admin']
   },
   {

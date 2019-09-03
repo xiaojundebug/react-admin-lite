@@ -1,19 +1,18 @@
 import React, { useContext } from 'react'
-import { Switch, Button } from 'antd'
+import { Switch, Tag } from 'antd'
+import AuthComponent from '../components/AuthComponent'
 import { observer, useLocalStore } from 'mobx-react-lite'
 import { userStore } from '../store'
-import { useAuthComponent } from '../common/hooks'
 
 const Permission: React.FC = props => {
   const { userinfo, saveUserinfo } = useContext(userStore)
-  const AuthButton = useAuthComponent(Button, ['admin'])
   const state = useLocalStore(() => ({
     isAdmin: userinfo.permission === 'admin'
   }))
 
-  function hancleClick() {
+  function handleClick() {
     state.isAdmin = !state.isAdmin
-    const userinfo = state.isAdmin
+    const data = state.isAdmin
       ? {
           account: 'admin@xxx.com',
           name: 'admin',
@@ -24,7 +23,7 @@ const Permission: React.FC = props => {
           name: 'guest',
           permission: 'guest'
         }
-    saveUserinfo(userinfo)
+    saveUserinfo(data)
   }
 
   return (
@@ -33,12 +32,14 @@ const Permission: React.FC = props => {
         checkedChildren="admin"
         unCheckedChildren="guest"
         checked={state.isAdmin}
-        onClick={hancleClick}
+        onClick={handleClick}
       />
       <p>
         Current permission <strong>{state.isAdmin ? 'admin' : 'guest'}</strong>
       </p>
-      <AuthButton type="primary">权限为admin该按钮才显示</AuthButton>
+      <AuthComponent permissions={['admin']}>
+        <Tag color="blue">only on admin</Tag>
+      </AuthComponent>
     </div>
   )
 }
