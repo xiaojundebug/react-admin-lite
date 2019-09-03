@@ -3,10 +3,10 @@ import React, { useContext } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import { Layout, Menu, Dropdown, Icon, Avatar, Modal, Input, BackTop, Button } from 'antd'
 import { ClickParam } from 'antd/lib/menu'
-import Menus from '../components/Menus'
-import Content from '../components/Content'
+import Menus from '../../components/Menus'
+import Content from '../../components/Content'
 import { observer, useLocalStore } from 'mobx-react-lite'
-import * as stores from '../store'
+import * as stores from '../../store'
 
 const { Header, Sider } = Layout
 
