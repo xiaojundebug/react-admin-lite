@@ -1,0 +1,2 @@
+(window["webpackJsonpreact-admin-lite"]=window["webpackJsonpreact-admin-lite"]||[]).push([[8],{480:function(e,n,t){"use strict";t.r(n);var a=t(0),i=t.n(a);n.default=function(e){return i.a.createElement("h1",null,"Hello")}}}]);
+//# sourceMappingURL=8.ee3d9d3b.chunk.js.map

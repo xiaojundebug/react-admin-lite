@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/Hello.tsx"],"names":["Hello","props"],"mappings":"gIAAA,2BAMeA,UAJS,SAAAC,GACtB,OAAO","file":"static/js/8.ee3d9d3b.chunk.js","sourcesContent":["import React from 'react'\n\nconst Hello: React.FC = props => {\n  return <h1>Hello</h1>\n}\n\nexport default Hello\n"],"sourceRoot":""}
