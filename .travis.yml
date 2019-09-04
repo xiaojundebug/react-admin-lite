@@ -15,9 +15,3 @@ deploy:
   github_token: $GITHUB_TOKEN
   on:
     branch: master
-notifications:
-  email:
-    - 362896731@qq.com
-  # slack:
-  #   on_success: always
-  #   on_failure: always
