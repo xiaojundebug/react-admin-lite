@@ -4,6 +4,7 @@ node_js:
 install:
   - yarn
 script:
+  - unset CI
   - yarn build
 cache: yarn
 deploy:
