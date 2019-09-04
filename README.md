@@ -1,8 +1,12 @@
-# react-admin-demo
+<h1 align="center" style="margin: 30px 0 35px;">react-admin-lite</h1>
 
-一个基于 creact-react-app 的简易后台，以供本人学习 react 技术栈。
+<p align="center">
+    <img alt="travis" src="https://travis-ci.org/xiaojun1994/react-admin-lite.svg?branch=master">
+</p>
 
-## 技术栈
+> _学习 react 技术栈时所写的一个简易后台，基于 create-react-app ts 版本_
+
+## 🤡 技术栈
 
 - react + hooks
 - react-router
@@ -13,13 +17,13 @@
 - axios
 - mockjs
 
-## 启动
+## 🍺 启动
 
 ```bash
 yarn start
 ```
 
-## 打包
+## 📦 打包
 
 ```bash
 yarn build
